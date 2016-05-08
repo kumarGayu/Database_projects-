@@ -1,0 +1,156 @@
+Execution: 
+0
+// 2 transactions
+// 2 transactions
+// generates a deadlock
+// generates a deadlock
+// will hang w/o deadlock resolution
+deadlock
+Log deadlock.log
+Log file name:deadlock.log
+
+leaving openlog
+BeginTx 3 W
+BeginTx : 3
+
+TxType : W
+
+
+entering BeginTx
+
+leaving BeginTx
+read    3 4
+Read : 3 : 4
+
+
+entering TxRead
+
+leaving TxRead
+read    3 5
+Read : 3 : 5
+
+
+entering TxRead
+
+leaving TxRead
+read    3 6
+Read : 3 : 6
+
+
+entering TxRead
+
+leaving TxRead
+BeginTx 1 W
+BeginTx : 1
+
+TxType : W
+
+
+entering BeginTx
+::entering wait_for method:::
+::leaving wait_for method:::
+::entering deadlock method:::
+::wtavle is null:::
+::leaving deadlock method:::
+::entering wait_for method:::
+::leaving wait_for method:::
+::entering deadlock method:::
+::wtavle is null:::
+::leaving deadlock method:::
+::entering wait_for method:::
+::leaving wait_for method:::
+::entering deadlock method:::
+::wtavle is null:::
+::leaving deadlock method:::
+
+leaving BeginTx
+BeginTx 2 W
+BeginTx : 2
+
+TxType : W
+
+
+entering BeginTx
+
+leaving BeginTx
+Read    1 1
+Read : 1 : 1
+
+
+entering TxRead
+
+leaving TxRead
+Read    2 2
+Read : 2 : 2
+
+
+entering TxRead
+
+leaving TxRead
+Write   1 2
+Write : 1 : 2
+
+
+entering TxWrite
+
+leaving TxWrite
+Write   2 1
+Write : 2 : 1
+
+
+entering TxWrite
+
+leaving TxWrite
+commit  3
+Commit : 2
+
+
+entering TxCommit
+
+leaving CommitTx
+Commit  1
+Commit : 3
+
+
+entering TxCommit
+::entering wait_for method:::
+::leaving wait_for method:::
+::entering deadlock method:::
+::wtavle is null:::
+::leaving deadlock method:::
+::entering wait_for method:::
+::leaving wait_for method:::
+::entering deadlock method:::
+::wtavle is null:::
+::leaving deadlock method:::
+::entering wait_for method:::
+::leaving wait_for method:::
+::entering deadlock method:::
+::wtavle is null:::
+::leaving deadlock method:::
+
+leaving CommitTx
+
+:::Hash node with Tid:3, obno:6 lockmode:S removed
+
+:::Hash node with Tid:3, obno:5 lockmode:S removed
+
+:::Hash node with Tid:3, obno:4 lockmode:S removed
+::entering wait_for method:::
+::leaving wait_for method:::
+::entering deadlock method:::
+going in traversein traverse  methodafter findcommit 2in
+cycle detectedCommit : 1
+
+
+:::Hash node with Tid:1, obno:1 lockmode:S removed
+::leaving deadlock method:::
+
+entering TxCommit
+
+leaving CommitTx
+
+
+:::Hash node with Tid:2, obno:1 lockmode:X removed
+
+:::Hash node with Tid:2, obno:2 lockmode:S removed
