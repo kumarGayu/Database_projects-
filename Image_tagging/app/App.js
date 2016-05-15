@@ -49,9 +49,11 @@ var App = React.createClass({
   },
 
   onClick: function(event){
+    var imageX = this.refs.image.offsetX;
+    var imageY = this.refs.image.offsetY;
     this.state.positions.push({
-      x: event.pageX,
-      y: event.pageY
+      x: event.pageX-imageX,
+      y: event.pageY-imageY
     });
 
   },
@@ -96,17 +98,17 @@ var App = React.createClass({
 
     render: function(){
       return (
-        <Panel>
-          <Panel className="drag-area">
-              <TagDialog hidden = {this.state.isTagDialogHidden}
-                          addTag = {this.addATag}/>
-              <Image path={'image/test_image.png'} onClick={this.onClick} onContextMenu = {this.showTagDialog}/>
-              {this.getTags()}
-          </Panel>
-          <Panel>
+        <Panel className="center">
+          <Panel className="center">
             <Button lable = 'Show Tags' onClick = {this.onShowTags}/>
             <Button lable = 'Hide Tags' onClick = {this.onHideTags}/>
             <Button lable = 'Remove All' onClick = {this.onRemoveTags}/>
+          </Panel>
+          <Panel className="drag-area">
+              <TagDialog hidden = {this.state.isTagDialogHidden}
+                          addTag = {this.addATag}/>
+              <Image path={'image/test_image.png'} ref="image" onClick={this.onClick} onContextMenu = {this.showTagDialog}/>
+              {this.getTags()}
           </Panel>
         </Panel>
       );

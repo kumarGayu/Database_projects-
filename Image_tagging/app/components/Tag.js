@@ -46,9 +46,11 @@ var Tag = React.createClass({
     onChange: function(event){
         var me = this;
         this.dragged = true;
+        var imageX = this.refs.image.offsetX;
+        var imageY = this.refs.image.offsetY;
         var newPosition = {
-            x: event.clientX,
-            y: event.clientY
+            x: event.clientX - imageX,
+            y: event.clientY - imageY
         }
         _.remove(this.props.tag.positions,function(position){
             if(position === me.props.position){
@@ -78,8 +80,10 @@ var Tag = React.createClass({
     },
 
     render: function() {
+        var imageX = this.refs.image.offsetX;
+        var imageY = this.refs.image.offsetY;
         return (
-            <div className="tagged dragMe" key={this.props.key} style={{left:this.props.position.x,top:this.props.position.y,display:"block"}} ref="draggable">
+            <div className="tagged dragMe" key={this.props.key} style={{left:imageX+this.props.position.x,top:imageY+this.props.position.y,display:"block"}} ref="draggable">
                 <div id={this.props.tag.tag} className="circle tag" onClick={this.onClick}/>
                 {this.getClose()}
             </div>

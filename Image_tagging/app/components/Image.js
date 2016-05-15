@@ -20,7 +20,7 @@ var Image = React.createClass({
 
   render: function(){
     return (
-      <img src={this.props.path} id='imageMap' onContextMenu={this.onContextMenu} onClick={this.onClick}/>
+      <img src={this.props.path} id="imageMap" ref="image" onContextMenu={this.onContextMenu} onClick={this.onClick}/>
     );
   }
 

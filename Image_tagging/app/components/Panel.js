@@ -4,7 +4,7 @@ var Panel = React.createClass({
 
     render: function() {
         return (
-            <div className="panel">
+            <div className={"panel "+ this.props.className}>
                 {this.props.children}
             </div>
             );

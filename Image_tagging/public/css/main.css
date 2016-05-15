@@ -2,6 +2,9 @@ body{
                 font-size:13px;
                 font-family:"Arial";
             }
+            .center{
+                left: 10%;
+            }
             .close{
                 position: absolute;
                 top: -20px;
