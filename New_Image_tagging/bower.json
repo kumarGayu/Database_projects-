@@ -1,0 +1,13 @@
+{
+    "name": "Image-label",
+    "dependencies": {
+        "react": "latest",
+        "bootstrap": "latest",
+        "lodash": "latest",
+        "underscore.string": "latest",
+        "font-awesome": "latest",
+        "axios": "^0.4.2",
+    	"flux": "^2.0.1",
+    	"moment": "latest"
+    }
+}

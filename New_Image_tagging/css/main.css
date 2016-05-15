@@ -1,0 +1,107 @@
+body{
+                font-size:13px;
+                font-family:"Arial";
+            }
+            .planetmap div{
+
+                display:block;
+                position:absolute;
+            }
+
+            .hidden{
+                display:none;
+            }
+
+            .center{
+                padding-left: 10%;
+                padding-top: 5%;
+            }
+
+            .circle {
+               width: 8px;
+               height: 8px;
+               -moz-border-radius: 8px;
+               -webkit-border-radius: 8px;
+               border-radius: 10px;
+            }
+            #red{
+                background: red;
+            }
+            #green{
+                background: green;
+            }
+            #orange{
+                background: orange;
+            }
+            #main_panel{
+                margin: auto;
+                padding: 10px;
+                width: 1000px;
+            }
+            #url_panel{
+
+            }
+            #form_panel{
+                float: left;
+                background:#eee;
+                border:5px solid #FFF;
+                outline:1px solid #eee;
+                left: 100px;
+                padding: 5px;
+                position: absolute;
+                top: 40px;
+                width: 310px;
+                z-index:2000;
+            }
+
+            #form_panel input,textarea{
+                padding:3px;
+                background:#FFF;
+                border:1px solid #CFCFCF;
+                color:#000;
+            }
+
+            #image_panel{
+                float:left;
+                width:600px;
+                position:relative;
+            }
+            #image_panel img{
+                left:0;top:-102px;
+                max-width: 600px;
+                overflow: hidden;
+
+            }
+
+
+            #form_panel .label{
+                float:left;
+                width:80px;
+                padding:5px;
+            }
+
+            #form_panel .field{
+                float:left;
+                width:200px;
+                padding:5px;
+            }
+
+            #form_panel .row{
+                clear:both;
+            }
+
+            #info_panel{
+                padding:10px;
+                margin:20px 0;
+                background:#eee;
+            }
+
+
+            input[type='button']{
+                background: none repeat scroll 0 0 #2769C4;
+                border: 1px solid #CFCFCF;
+                color: #FFFFFF;
+                font-weight: bold;
+                height: 30px;
+                padding: 5px;
+            }
