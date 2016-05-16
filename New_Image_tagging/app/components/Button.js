@@ -10,16 +10,15 @@ var Button = React.createClass({
         event.preventDefault();
 
         if(this.props.onClick){
-            this.props.onClick();
+            this.props.onClick(event);
         }
     },
 
     render: function() {
         return (
-            <input type='button'
-            className = 'button'
-            value = {this.props.lable}
-            onClick = {this.onClick}/>
+            <button className = 'button' style={{display: 'flex', justifyContent: 'center'}} onClick = {this.onClick}>
+                <span className='text-center' >{this.props.lable}</span>
+            </button>
         );
     }
 });

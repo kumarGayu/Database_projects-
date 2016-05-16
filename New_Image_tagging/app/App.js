@@ -8,12 +8,6 @@ var TagDialog = require('./components/TagDialog');
 var tagStore = require('./stores/tagStore');
 var tagActions = require('./actions/tagActions');
 
-
-var Router = require("react-router");
-var Route = Router.Route;
-var DefaultRoute = Router.DefaultRoute;
-var RouteHandler = Router.RouteHandler;
-
 var App = React.createClass({
   getInitialState: function() {
     return {
@@ -21,6 +15,8 @@ var App = React.createClass({
       isTagDialogHidden: true,
       positions:[],
       tags:[],
+      left:0,
+      top:0,
       title:""
     };
   },
@@ -44,7 +40,9 @@ var App = React.createClass({
       isTagDialogHidden: true,
       isTagsHidden: false
     });
-    tagActions.addTag({tag: tag,
+    tagActions.addTag({
+      type: tag.type,
+      tag: tag.tag,
       positions: this.state.positions
     });
   },
@@ -63,6 +61,8 @@ var App = React.createClass({
     this.setState({
       isTagDialogHidden: false,
       isTagsHidden: true,
+      left: event.pageX,
+      top: event.pageY
     });
   },
 
@@ -101,15 +101,15 @@ var App = React.createClass({
 
     render: function(){
       return (
-        <Panel className="center">
+        <Panel>
           <Panel className="center">
-            <Button lable = 'Show Tags' onClick = {this.onShowTags}/>
-            <Button lable = 'Hide Tags' onClick = {this.onHideTags}/>
-            <Button lable = 'Remove All' onClick = {this.onRemoveTags}/>
+            <Button lable = 'Show tags' onClick = {this.onShowTags}/>
+            <Button lable = 'Hide tags' onClick = {this.onHideTags}/>
+            <Button lable = 'Remove all' onClick = {this.onRemoveTags}/>
           </Panel>
-          <Panel className="drag-area">
+          <Panel className="drag-area center">
               <TagDialog hidden = {this.state.isTagDialogHidden}
-                          addTag = {this.addATag}/>
+                          addTag = {this.addATag} left={this.state.left} top={this.state.top} />
               <Image path={'image/test_image.png'} ref="images" onClick={this.onClick} onContextMenu = {this.showTagDialog}/>
               {this.getTags()}
           </Panel>

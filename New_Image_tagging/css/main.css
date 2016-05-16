@@ -1,4 +1,4 @@
-body{
+            body{
                 font-size:13px;
                 font-family:"Arial";
             }
@@ -12,17 +12,22 @@ body{
                 display:none;
             }
 
-            .center{
-                padding-left: 10%;
-                padding-top: 5%;
-            }
-
             .circle {
-               width: 8px;
-               height: 8px;
                -moz-border-radius: 8px;
                -webkit-border-radius: 8px;
                border-radius: 10px;
+            }
+            .small{
+                width: 8px;
+                height: 8px;
+            }
+            .regular{
+                width: 12px;
+                height: 12px;
+            }
+            .big{
+                width: 16px;
+                height: 16px;
             }
             #red{
                 background: red;
@@ -46,11 +51,8 @@ body{
                 background:#eee;
                 border:5px solid #FFF;
                 outline:1px solid #eee;
-                left: 100px;
                 padding: 5px;
                 position: absolute;
-                top: 40px;
-                width: 310px;
                 z-index:2000;
             }
 
@@ -63,26 +65,21 @@ body{
 
             #image_panel{
                 float:left;
-                width:600px;
                 position:relative;
             }
+
             #image_panel img{
-                left:0;top:-102px;
-                max-width: 600px;
+                left:0;
                 overflow: hidden;
-
             }
-
 
             #form_panel .label{
                 float:left;
-                width:80px;
                 padding:5px;
             }
 
             #form_panel .field{
                 float:left;
-                width:200px;
                 padding:5px;
             }
 
@@ -97,11 +94,15 @@ body{
             }
 
 
-            input[type='button']{
+            .button{
                 background: none repeat scroll 0 0 #2769C4;
                 border: 1px solid #CFCFCF;
                 color: #FFFFFF;
                 font-weight: bold;
-                height: 30px;
-                padding: 5px;
+                min-height: 30px;
+                margin: 10px;
+                text-align: 'center';
+            }
+            .text-center{
+                text-align: 'center';
             }
