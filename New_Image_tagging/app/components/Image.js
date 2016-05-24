@@ -1,6 +1,5 @@
 /** @jsx React.DOM */
 var React = require('react');
-var React = require('react');
 
 var Image = React.createClass({
   onContextMenu: function(event) {

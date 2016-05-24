@@ -46,6 +46,13 @@
             #url_panel{
 
             }
+            .image-input > *{
+                padding: 5px;
+                margin: 10px;
+            }
+            .image-input{
+                padding: 10px;
+            }
             #form_panel{
                 float: left;
                 background:#eee;
