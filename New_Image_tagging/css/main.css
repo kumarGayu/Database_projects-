@@ -50,9 +50,38 @@
                 padding: 5px;
                 margin: 10px;
             }
+
             .image-input{
                 padding: 10px;
             }
+
+            .preview-image, .preview-image img{
+                float:left;
+                max-width:220px;
+                max-height:220px;
+            }
+
+            .border-preview-image button.left{
+                float: left;
+                vertical-align: center;
+                background: #000 url("../image/prev.png") no-repeat scroll center center
+            }
+
+            .border-preview-image button.right{
+                float: right;
+                vertical-align: center;
+                background: #000 url("../image/next.png") no-repeat scroll center center
+            }
+
+            .border-preview-image{
+                width:1040px;
+                display: flex;
+            }
+
+            .preview-image{
+                padding:10px;
+            }
+
             #form_panel{
                 float: left;
                 background:#eee;
@@ -100,6 +129,24 @@
                 background:#eee;
             }
 
+            .preview-images {
+                height: 240px;
+                overflow: hidden;
+                width: 960px;
+                float: left;
+            }
+
+            .close{
+                position: absolute;
+                top: -20px;
+                right: -14px;
+                width: 25px;
+                height: 25px;
+                background: transparent url("../image/close.png") no-repeat center center;
+                -moz-border-radius: 8px;
+                -webkit-border-radius: 8px;
+                border-radius: 10px;
+            }
 
             .button{
                 background: none repeat scroll 0 0 #2769C4;
@@ -110,6 +157,7 @@
                 margin: 10px;
                 text-align: 'center';
             }
+
             .text-center{
                 text-align: 'center';
             }

@@ -24,7 +24,8 @@
     "js": "./app/**/*.js",
     "jsx": "./app/**/*.jsx",
     "app": "./app/app.js",
-    "html": "*.html"
+    "html": "*.html",
+    "images": "./image"
   },
   "dest": {
     "style": "style.css",
