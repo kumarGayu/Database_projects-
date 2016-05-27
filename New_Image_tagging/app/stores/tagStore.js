@@ -34,10 +34,6 @@ var addTag = function(tag){
   axios.put('http://localhost:3000/tags/addTagpoints',tag).then(function(res){ getTag();});
 };
 
-var addImage = function(file){
-  axios.put('http://localhost:3000/images/addImages',file);
-};
-
 var removeTag = function(tag){
   if(_.isEmpty(tag)){
     axios.put('http://localhost:3000/tags/removeAll').then(function(res){ getTag();});
@@ -65,9 +61,6 @@ AppDispatcher.register(function(payload){
       break;
     case appConstants.GET_TAG:
       getTag();
-      break;
-    case appConstants.ADD_IMAGE:
-      addImage(action.data);
       break;
     default:
       return true;

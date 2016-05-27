@@ -16,7 +16,7 @@ var Button = React.createClass({
 
     render: function() {
         return (
-            <button className = 'button' style={{display: 'flex', justifyContent: 'center'}} onClick = {this.onClick}>
+            <button className = {'button '+this.props.className} style={{display: 'flex', justifyContent: 'center'}} onClick = {this.onClick}>
                 <span className='text-center' >{this.props.lable}</span>
             </button>
         );

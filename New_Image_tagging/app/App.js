@@ -132,7 +132,7 @@ var App = React.createClass({
 
     render: function(){
       return (
-        <Panel>
+        <Panel className="parent">
           <Panel className="center">
             <Button lable = 'Show tags' onClick = {this.onShowTags}/>
             <Button lable = 'Hide tags' onClick = {this.onHideTags}/>
