@@ -14,9 +14,10 @@ var tagActions = {
       data: tag
     })
   },
-  getTag: function(){
+  getTag: function(id){
     AppDispatcher.handleAction({
-      actionType: appConstants.GET_TAG
+      actionType: appConstants.GET_TAG,
+      data: id
     })
   },
   removeTag: function(tag){

@@ -16,6 +16,7 @@
                -moz-border-radius: 8px;
                -webkit-border-radius: 8px;
                border-radius: 10px;
+               cursor: pointer;
             }
             .small{
                 width: 8px;
@@ -64,13 +65,13 @@
             .border-preview-image button.left{
                 float: left;
                 vertical-align: center;
-                background: #000 url("../image/prev.png") no-repeat scroll center center
+                background: buttonshadow url("../image/prev.png") no-repeat scroll center center
             }
 
             .border-preview-image button.right{
                 float: right;
                 vertical-align: center;
-                background: #000 url("../image/next.png") no-repeat scroll center center
+                background: buttonshadow url("../image/next.png") no-repeat scroll center center
             }
 
             .border-preview-image{
@@ -80,6 +81,14 @@
 
             .preview-image{
                 padding:10px;
+            }
+
+            .image-input > input[type="text"] {
+                border-radius: 10px;
+            }
+
+            .image-input > input[type="text"] {
+                border-radius: 10px;
             }
 
             #form_panel{

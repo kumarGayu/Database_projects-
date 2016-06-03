@@ -23,25 +23,25 @@ var tagStore = objectAssign({}, EventEmitter.prototype, {
   }
 });
 
-var getTag = function(){
-  axios.get('http://localhost:3000/tags/getTagpoints').then(function(res){
+var getTag = function(id){
+  axios.post('http://localhost:3000/tags/getTagpoints',{"id":id}).then(function(res){
     _store.list = res.data;
     tagStore.emit(CHANGE_EVENT);
   }).catch(function(res){});
 };
 
 var addTag = function(tag){
-  axios.put('http://localhost:3000/tags/addTagpoints',tag).then(function(res){ getTag();});
+  axios.put('http://localhost:3000/tags/addTagpoints',tag).then(function(res){ getTag(tag.imageId);});
 };
 
 var removeTag = function(tag){
   if(_.isEmpty(tag)){
-    axios.put('http://localhost:3000/tags/removeAll').then(function(res){ getTag();});
+    axios.put('http://localhost:3000/tags/removeAll').then(function(res){ getTag(tag.imageId);});
   }else{
     if(_.isEmpty(tag.positions)){
-      axios.put('http://localhost:3000/tags/deleteATag',tag).then(function(res){ getTag();});
+      axios.put('http://localhost:3000/tags/deleteATag',tag).then(function(res){ getTag(tag.imageId);});
     }else{
-      axios.put('http://localhost:3000/tags/updateATag',tag).then(function(res){ getTag();});
+      axios.put('http://localhost:3000/tags/updateATag',tag).then(function(res){ getTag(tag.imageId);});
     }
   }
 };
@@ -60,7 +60,7 @@ AppDispatcher.register(function(payload){
       removeTag(action.data);
       break;
     case appConstants.GET_TAG:
-      getTag();
+      getTag(action.data);
       break;
     default:
       return true;

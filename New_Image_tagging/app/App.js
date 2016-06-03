@@ -11,6 +11,7 @@ var tagStore = require('./stores/tagStore');
 var tagActions = require('./actions/tagActions');
 var imageStore = require('./stores/imageStore');
 var imageActions = require('./actions/imageActions');
+var _ = require('lodash');
 
 var App = React.createClass({
   getInitialState: function() {
@@ -22,7 +23,9 @@ var App = React.createClass({
       left:0,
       top:0,
       title:"",
-      image:[]
+      images:[],
+      image: {},
+      imageIndex:0
     };
   },
 
@@ -48,6 +51,7 @@ var App = React.createClass({
     tagActions.addTag({
       type: tag.type,
       tag: tag.tag,
+      imageId: this.state.image._id, 
       positions: this.state.positions
     });
   },
@@ -88,8 +92,10 @@ var App = React.createClass({
   },
 
   onImageChange: function(){
-    this.state.images= imageStore.getList();
+    this.state.images= _.chunk(imageStore.getList(),4)[this.state.imageIndex];
+    this.state.image = _.chunk(imageStore.getList(),4)[this.state.imageIndex][0];
     this.forceUpdate();
+    tagActions.getTag(this.state.image._id);
   },
 
   onTagDelete: function(tag){
@@ -103,7 +109,6 @@ var App = React.createClass({
   componentDidMount: function (){
     tagStore.addChangeListener(this.onChange);
     imageStore.addChangeListener(this.onImageChange);
-    tagActions.getTag();
     imageActions.getImages();
   },
 
@@ -125,6 +130,27 @@ var App = React.createClass({
     }
   },
 
+  onImageClick: function(event){
+    this.setState({
+      image: event.data
+    });
+    tagActions.getTag(event.data._id);
+  },
+
+  onNextClick: function(){
+    if(this.state.imageIndex < _.chunk(imageStore.getList(),4).length-1){
+      this.state.images = _.chunk(imageStore.getList(),4)[++this.state.imageIndex];
+      this.forceUpdate();
+    }
+  },
+
+  onPrevClick: function(){
+    if(this.state.imageIndex > 0){
+      this.state.images = _.chunk(imageStore.getList(),4)[--this.state.imageIndex];
+      this.forceUpdate();
+    }
+  },
+
   componentWillUnmount: function(){
     tagStore.removeChangeListener(this.onChange);
     imageStore.removeChangeListener(this.onImageChange);
@@ -141,14 +167,14 @@ var App = React.createClass({
           <Panel className="drag-area center">
               <TagDialog hidden = {this.state.isTagDialogHidden}
                           addTag = {this.addATag} left={this.state.left} top={this.state.top} />
-              <Image path={'image/test_image.png'} ref="images" onClick={this.onClick} onContextMenu = {this.showTagDialog}/>
+              <Image src={this.state.image} ref="images" onClick={this.onClick} onContextMenu = {this.showTagDialog}/>
               {this.getTags()}
           </Panel>
           <Panel className="center">
             <ImageInput ref="imageFile" onUpload={this.onUpload} />
           </Panel>
           <Panel className="center">
-            <ImagePreview images={this.state.images} />
+            <ImagePreview images={this.state.images} onImageClick={this.onImageClick} onNextClick={this.onNextClick} onPrevClick={this.onPrevClick} />
           </Panel>
         </Panel>
       );
