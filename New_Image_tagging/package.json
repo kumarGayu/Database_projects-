@@ -17,6 +17,7 @@
     "del": "1.1.1",
     "axios": "^0.4.2",
     "flux": "^2.0.1",
+    "lodash": "^4.13.1",
     "moment": "latest"
   },
   "paths": {
@@ -24,7 +25,8 @@
     "js": "./app/**/*.js",
     "jsx": "./app/**/*.jsx",
     "app": "./app/app.js",
-    "html": "*.html"
+    "html": "*.html",
+    "images": "./image"
   },
   "dest": {
     "style": "style.css",

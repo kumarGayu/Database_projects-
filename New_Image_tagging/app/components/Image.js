@@ -1,11 +1,9 @@
 /** @jsx React.DOM */
 var React = require('react');
-var React = require('react');
 
 var Image = React.createClass({
   onContextMenu: function(event) {
       event.preventDefault();
-      console.log('on image');
       if(this.props.onContextMenu) {
         this.props.onContextMenu(event);
       }
@@ -13,15 +11,15 @@ var Image = React.createClass({
 
   onClick: function(event) {
       event.preventDefault();
-      console.log('on click');
-      if(this.props.onContextMenu) {
+      if(this.props.onClick) {
+        event.data = this.props.src;
         this.props.onClick(event);
       }
   },
 
   render: function(){
     return (
-      <img src={this.props.path} id="imageMap" ref="image" onContextMenu={this.onContextMenu} onClick={this.onClick} />
+      <img src={this.props.src.data} key={this.props.imageKey} id="imageMap" ref="image" onContextMenu={this.onContextMenu} onClick={this.onClick} />
     );
   }
 

@@ -5,10 +5,10 @@ var router = express.Router();
 /*
  * GET userlist.
  */
-router.get('/getTagPoints', function(req, res) {
+router.post('/getTagPoints', function(req, res) {
     var db = req.db;
     var collection = db.get('Tagpoints');
-    collection.find({},{},function(e,docs){
+    collection.find({ imageId: req.body.id },{},function(e,docs){
         res.json(docs);
     });
 });
@@ -27,7 +27,7 @@ router.put('/addTagpoints', function(req, res) {
         }
         else {
             // And forward to success page
-            res.send("successfully added"+req.params.positions);
+            res.send("successfully added");
         }
     });
 });
