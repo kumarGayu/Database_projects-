@@ -1,0 +1,148 @@
+body {
+  font-size: 13px;
+  font-family: "Arial";
+}
+.planetmap div {
+  display: block;
+  position: absolute;
+}
+.hidden {
+  display: none;
+}
+.circle {
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.small {
+  width: 8px;
+  height: 8px;
+}
+.regular {
+  width: 12px;
+  height: 12px;
+}
+.big {
+  width: 16px;
+  height: 16px;
+}
+#red {
+  background: red;
+}
+#green {
+  background: green;
+}
+#orange {
+  background: orange;
+}
+#main_panel {
+  margin: auto;
+  padding: 10px;
+  width: 1000px;
+}
+.image-input > * {
+  padding: 5px;
+  margin: 10px;
+}
+.image-input {
+  padding: 10px;
+}
+.preview-image,
+.preview-image img {
+  float: left;
+  max-width: 220px;
+  max-height: 220px;
+}
+.border-preview-image button.left {
+  float: left;
+  vertical-align: center;
+  background: buttonshadow url("../image/prev.png") no-repeat scroll center center;
+}
+.border-preview-image button.right {
+  float: right;
+  vertical-align: center;
+  background: buttonshadow url("../image/next.png") no-repeat scroll center center;
+}
+.border-preview-image {
+  width: 1040px;
+  display: flex;
+}
+.preview-image {
+  padding: 10px;
+}
+.image-input > input[type="text"] {
+  border-radius: 10px;
+}
+.image-input > input[type="text"] {
+  border-radius: 10px;
+}
+#form_panel {
+  float: left;
+  background: #eee;
+  border: 5px solid #FFF;
+  outline: 1px solid #eee;
+  padding: 5px;
+  position: absolute;
+  z-index: 2000;
+}
+#form_panel input,
+textarea {
+  padding: 3px;
+  background: #FFF;
+  border: 1px solid #CFCFCF;
+  color: #000;
+}
+#image_panel {
+  float: left;
+  position: relative;
+}
+#image_panel img {
+  left: 0;
+  overflow: hidden;
+}
+#form_panel .label {
+  float: left;
+  padding: 5px;
+}
+#form_panel .field {
+  float: left;
+  padding: 5px;
+}
+#form_panel .row {
+  clear: both;
+}
+#info_panel {
+  padding: 10px;
+  margin: 20px 0;
+  background: #eee;
+}
+.preview-images {
+  height: 240px;
+  overflow: hidden;
+  width: 960px;
+  float: left;
+}
+.close {
+  position: absolute;
+  top: -20px;
+  right: -14px;
+  width: 25px;
+  height: 25px;
+  background: transparent url("../image/close.png") no-repeat center center;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 10px;
+}
+.button {
+  background: none repeat scroll 0 0 #2769C4;
+  border: 1px solid #CFCFCF;
+  color: #FFFFFF;
+  font-weight: bold;
+  min-height: 30px;
+  margin: 10px;
+  text-align: 'center';
+}
+.text-center {
+  text-align: 'center';
+}
