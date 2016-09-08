@@ -5,6 +5,8 @@ var axios = require('axios');
 var EventEmitter = require('events').EventEmitter;
 var _ = require('lodash');
 
+var conf = require('../config.js');
+
 var CHANGE_EVENT = 'change';
 
 var _store = {
@@ -24,7 +26,7 @@ var imageStore = objectAssign({}, EventEmitter.prototype, {
 });
 
 var getImages = function(){
-  axios.get('http://localhost:3000/images/getImages').then(function(res){
+  axios.get('http://'+conf.ip+':'+conf.port+'/images/getImages').then(function(res){
     _store.list = res.data;
     imageStore.emit(CHANGE_EVENT);
   }).catch(function(res){});
@@ -32,7 +34,7 @@ var getImages = function(){
 
 
 var addImage = function(file){
-  axios.put('http://localhost:3000/images/addImages',file);
+  axios.put('http://'+conf.ip+':'+conf.port+'/images/addImages',file);
 };
 
 

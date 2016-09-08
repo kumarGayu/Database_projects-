@@ -5,6 +5,8 @@ var axios = require('axios');
 var EventEmitter = require('events').EventEmitter;
 var _ = require('lodash');
 
+var conf = require('../config.js');
+
 var CHANGE_EVENT = 'change';
 
 var _store = {
@@ -24,24 +26,24 @@ var tagStore = objectAssign({}, EventEmitter.prototype, {
 });
 
 var getTag = function(id){
-  axios.post('http://localhost:3000/tags/getTagpoints',{"id":id}).then(function(res){
+  axios.post('http://'+conf.ip+':'+conf.port+'/tags/getTagpoints',{"id":id}).then(function(res){
     _store.list = res.data;
     tagStore.emit(CHANGE_EVENT);
   }).catch(function(res){});
 };
 
 var addTag = function(tag){
-  axios.put('http://localhost:3000/tags/addTagpoints',tag).then(function(res){ getTag(tag.imageId);});
+  axios.put('http://'+conf.ip+':'+conf.port+'/tags/addTagpoints',tag).then(function(res){ getTag(tag.imageId);});
 };
 
 var removeTag = function(tag){
   if(_.isEmpty(tag)){
-    axios.put('http://localhost:3000/tags/removeAll').then(function(res){ getTag(tag.imageId);});
+    axios.put('http://'+conf.ip+':'+conf.port+'/tags/removeAll').then(function(res){ getTag(tag.imageId);});
   }else{
     if(_.isEmpty(tag.positions)){
-      axios.put('http://localhost:3000/tags/deleteATag',tag).then(function(res){ getTag(tag.imageId);});
+      axios.put('http://'+conf.ip+':'+conf.port+'/tags/deleteATag',tag).then(function(res){ getTag(tag.imageId);});
     }else{
-      axios.put('http://localhost:3000/tags/updateATag',tag).then(function(res){ getTag(tag.imageId);});
+      axios.put('http://'+conf.ip+':'+conf.port+'/tags/updateATag',tag).then(function(res){ getTag(tag.imageId);});
     }
   }
 };
