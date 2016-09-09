@@ -50,7 +50,7 @@ var Tag = React.createClass({
         var newPosition = {
             x: event.pageX - this.props.imageX,
             y: event.pageY - this.props.imageY
-        }
+        };
         _.remove(this.props.tag.positions,function(position){
             if(position === me.props.position){
                 return position;

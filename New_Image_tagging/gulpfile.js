@@ -88,14 +88,14 @@ gulp.task('bower', function() {
  */
 .task('serve', ['bower', 'clean', 'lint', 'less', 'js', 'server'], function() {
   return gulp.watch([
-    package.paths.js, package.paths.jsx, package.paths.html, package.paths.less
+    package.paths.js, package.paths.appj, package.paths.less
   ], [
    'lint', 'less', 'js', browserSync.reload
   ]);
 })
 .task('serve:minified', ['bower', 'clean', 'lint', 'less:min', 'js:min', 'server'], function() {
   return gulp.watch([
-    package.paths.js, package.paths.jsx, package.paths.html, package.paths.less
+    package.paths.js, package.paths.appj, package.paths.less
   ], [
    'lint', 'less:min', 'js:min', browserSync.reload
   ]);

@@ -21,16 +21,19 @@
     "moment": "latest"
   },
   "paths": {
-    "less": "./css/*.css",
-    "js": "./app/**/*.js",
-    "jsx": "./app/**/*.jsx",
-    "app": "./app/app.js",
-    "html": "*.html",
-    "images": "./image"
+    "less": "./css/*",
+    "js": "./app/**/*",
+    "appj": "./app/*",
+    "app": "./app/App.js"
   },
   "dest": {
     "style": "style.css",
     "app": "app.js",
     "dist": "dist"
+  },
+  "dependencies": {
+    "react-bootstrap": "^0.30.3",
+    "react-router": "^2.7.0",
+    "react-router-bootstrap": "^0.23.1"
   }
 }
