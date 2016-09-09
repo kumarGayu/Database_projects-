@@ -141,7 +141,7 @@ module.exports = tagActions;
 
 },{"../constants/appConstants":19,"../dispatcher/AppDispatcher":20}],5:[function(require,module,exports){
 var React = require('react');
-
+var B = require('react-bootstrap').Button;
 var Button = React.createClass({displayName: "Button",
 
     propTypes: {
@@ -158,16 +158,14 @@ var Button = React.createClass({displayName: "Button",
 
     render: function() {
         return (
-            React.createElement("button", {className: 'button '+this.props.className, style: {display: 'flex', justifyContent: 'center'}, onClick: this.onClick}, 
-                React.createElement("span", {className: "text-center"}, this.props.lable)
-            )
+            React.createElement(B, {className: 'button '+this.props.className, onClick: this.onClick}, " ", this.props.lable)
         );
     }
 });
 
 module.exports = Button;
 
-},{"react":532}],6:[function(require,module,exports){
+},{"react":532,"react-bootstrap":295}],6:[function(require,module,exports){
 /** @jsx React.DOM */
 var React = require('react');
 

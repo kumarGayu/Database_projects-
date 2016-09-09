@@ -1,5 +1,5 @@
 var React = require('react');
-
+var B = require('react-bootstrap').Button;
 var Button = React.createClass({
 
     propTypes: {
@@ -16,9 +16,7 @@ var Button = React.createClass({
 
     render: function() {
         return (
-            <button className = {'button '+this.props.className} style={{display: 'flex', justifyContent: 'center'}} onClick = {this.onClick}>
-                <span className='text-center' >{this.props.lable}</span>
-            </button>
+            <B className = {'button '+this.props.className} onClick = {this.onClick}> {this.props.lable}</B>
         );
     }
 });
