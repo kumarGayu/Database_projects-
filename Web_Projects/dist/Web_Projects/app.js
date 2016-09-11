@@ -985,7 +985,7 @@ var TagDialog = React.createClass({displayName: "TagDialog",
         return (
             React.createElement("div", {id: "form_panel", style: this.getDialogStyle()}, 
                 React.createElement(Panel, {className: "row"}, 
-                    React.createElement("p", null, "Title"), 
+                    React.createElement("div", {className: "label"}, "Title"), 
                     React.createElement("div", {className: "field"}, 
                         React.createElement("input", {type: "text", id: "title", onChange: this.textChange, value: this.state.text})
                     )
