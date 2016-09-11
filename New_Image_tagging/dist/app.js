@@ -1144,7 +1144,7 @@ var Profile = React.createClass({
                     React.createElement("li", null, React.createElement("a", {className: "fa fa-github fa-2x", href: 'https://github.com/'+profile.profiles[1].username}))
                   ), 
                   React.createElement("div", {className: "divider"}), 
-                  React.createElement("p", null, "I built this site with ", React.createElement("a", {href: "https://facebook.github.io/react/"}, "React"), " components and a ", React.createElement("a", {href: "https://jsonresume.org/schema/"}, "JSON Resume Schema"), ". The full source code can be found in ", React.createElement("a", {href: "https://github.com/freaksauce/React-Resume"}, "my Github repo"), ".")
+                  React.createElement("p", null, "I built this site with ", React.createElement("a", {href: "https://facebook.github.io/react/"}, "React"), " components and a ", React.createElement("a", {href: "https://jsonresume.org/schema/"}, "JSON Resume Schema"))
                 )
     },
 
