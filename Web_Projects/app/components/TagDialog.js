@@ -58,7 +58,7 @@ var TagDialog = React.createClass({
         return (
             <div id='form_panel' style={this.getDialogStyle()}>
                 <Panel className='row'>
-                    <div className='label'>Title</div>
+                    <label>Title</label>
                     <div className='field'>
                         <input type='text' id='title' onChange={this.textChange} value={this.state.text} />
                     </div>

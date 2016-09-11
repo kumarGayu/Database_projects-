@@ -32,7 +32,7 @@ var Mainapp = React.createClass({
         <Nav bsStyle="tabs" activeKey={this.state.activeKey} onSelect={this.handleSelect}>
           <LinkContainer to={{ pathname: '/Projects/home'}}><NavItem eventKey='0'>Home</NavItem></LinkContainer>
           <LinkContainer to={{ pathname: '/Projects/reasons'}}><NavItem eventKey='2'>Reasons</NavItem></LinkContainer>
-          <LinkContainer to={{ pathname: '/Projects/projects'}}><NavItem eventKey='3'>Other Projects</NavItem></LinkContainer>
+          <LinkContainer to={{ pathname: '/Projects/projects'}}><NavItem eventKey='3'>Projects</NavItem></LinkContainer>
           <LinkContainer to={{ pathname: '/Projects/about'}}><NavItem eventKey='1'>About me</NavItem></LinkContainer>
         </Nav>
         <div className="content">

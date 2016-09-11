@@ -123,7 +123,7 @@ var Mainapp = React.createClass({displayName: "Mainapp",
         React.createElement(Nav, {bsStyle: "tabs", activeKey: this.state.activeKey, onSelect: this.handleSelect}, 
           React.createElement(LinkContainer, {to: { pathname: '/Projects/home'}}, React.createElement(NavItem, {eventKey: "0"}, "Home")), 
           React.createElement(LinkContainer, {to: { pathname: '/Projects/reasons'}}, React.createElement(NavItem, {eventKey: "2"}, "Reasons")), 
-          React.createElement(LinkContainer, {to: { pathname: '/Projects/projects'}}, React.createElement(NavItem, {eventKey: "3"}, "Other Projects")), 
+          React.createElement(LinkContainer, {to: { pathname: '/Projects/projects'}}, React.createElement(NavItem, {eventKey: "3"}, "Projects")), 
           React.createElement(LinkContainer, {to: { pathname: '/Projects/about'}}, React.createElement(NavItem, {eventKey: "1"}, "About me"))
         ), 
         React.createElement("div", {className: "content"}, 
@@ -985,7 +985,7 @@ var TagDialog = React.createClass({displayName: "TagDialog",
         return (
             React.createElement("div", {id: "form_panel", style: this.getDialogStyle()}, 
                 React.createElement(Panel, {className: "row"}, 
-                    React.createElement("div", {className: "label"}, "Title"), 
+                    React.createElement("label", null, "Title"), 
                     React.createElement("div", {className: "field"}, 
                         React.createElement("input", {type: "text", id: "title", onChange: this.textChange, value: this.state.text})
                     )
