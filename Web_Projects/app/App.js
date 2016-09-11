@@ -19,7 +19,7 @@ var App = React.createClass({
   render: function(){
       return (
         <Router useKey={false} history={appHistory}>
-          <Route path="/" component={Mainapp}>
+          <Route path="/Projects/" component={Mainapp}>
             <IndexRoute component={Llamaprofile} />
             <Route path="about" component={Resume} />
             <Route path="home" component={Llamaprofile} />
