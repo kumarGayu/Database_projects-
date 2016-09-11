@@ -1,5 +1,5 @@
 {
-    "name": "Image-label",
+    "name": "image-label",
     "dependencies": {
         "react": "latest",
         "bootstrap": "latest",

@@ -19,7 +19,7 @@ var appHistory = routerHistory(createHistory)({ queryKey: false });
 var Mainapp = React.createClass({
     getInitialState: function () {
     return {
-      activeKey: '1'
+      activeKey: 1
     }
   },
     handleSelect: function(eventKey) {
@@ -31,9 +31,9 @@ var Mainapp = React.createClass({
        return (
       <div>
         <Nav bsStyle="tabs" activeKey={this.state.activeKey} onSelect={this.handleSelect}>
-          <LinkContainer to={{ pathname: '/home'}}><NavItem eventKey="1">Home</NavItem></LinkContainer>
-          <LinkContainer to={{ pathname: '/'}}><NavItem eventKey="2">NavItem 2 content</NavItem></LinkContainer>
-          <LinkContainer to={{ pathname: '/llama'}}><NavItem eventKey="3">NavItem 3</NavItem></LinkContainer>
+          <LinkContainer to={{ pathname: '/home'}}><NavItem eventKey='0'>Home</NavItem></LinkContainer>
+          <LinkContainer to={{ pathname: '/'}}><NavItem eventKey='1'>NavItem 2 content</NavItem></LinkContainer>
+          <LinkContainer to={{ pathname: '/llama'}}><NavItem eventKey='2'>NavItem 3</NavItem></LinkContainer>
         </Nav>
         <div className="content">
           {this.props.children}

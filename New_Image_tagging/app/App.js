@@ -7,8 +7,7 @@ var IndexRoute = require('react-router').IndexRoute;
 
 var Mainapp = require('./Mainapp');
 var Main = require('./components/Main');
-var Button = require('./components/Button');
-var Close = require('./components/Close');
+var Resume = require('./resume/Resume');
 
 var useRouterHistory = require('react-router').useRouterHistory;
 var createHashHistory = require('history').createHistory;
@@ -19,8 +18,8 @@ var App = React.createClass({
       return (
         <Router useKey={false} history={appHistory}>
           <Route useKey={false} path="/" component={Mainapp}>
-            <IndexRoute useKey={false} component={Button} />
-            <Route useKey={false} path="about" component={Close} />
+            <IndexRoute useKey={false} component={Resume} />
+            <Route useKey={false} path="about" component={Resume} />
             <Route useKey={false} path="llama" component={Main} />
           </Route>
         </Router>

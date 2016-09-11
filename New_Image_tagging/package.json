@@ -32,6 +32,7 @@
     "dist": "dist"
   },
   "dependencies": {
+    "moment": "^2.14.1",
     "react-bootstrap": "^0.30.3",
     "react-router": "^2.7.0",
     "react-router-bootstrap": "^0.23.1"
