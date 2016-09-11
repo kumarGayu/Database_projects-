@@ -18,10 +18,10 @@ var App = React.createClass({displayName: "App",
   render: function(){
       return (
         React.createElement(Router, {useKey: false, history: appHistory}, 
-          React.createElement(Route, {useKey: false, path: "/", component: Mainapp}, 
-            React.createElement(IndexRoute, {useKey: false, component: Resume}), 
-            React.createElement(Route, {useKey: false, path: "about", component: Resume}), 
-            React.createElement(Route, {useKey: false, path: "llama", component: Main})
+          React.createElement(Route, {path: "/", component: Mainapp}, 
+            React.createElement(IndexRoute, {component: Resume}), 
+            React.createElement(Route, {path: "about", component: Resume}), 
+            React.createElement(Route, {path: "llama", component: Main})
           )
         )
       );
@@ -67,8 +67,8 @@ var Mainapp = React.createClass({displayName: "Mainapp",
        return (
       React.createElement("div", null, 
         React.createElement(Nav, {bsStyle: "tabs", activeKey: this.state.activeKey, onSelect: this.handleSelect}, 
-          React.createElement(LinkContainer, {to: { pathname: '/home'}}, React.createElement(NavItem, {eventKey: "0"}, "Home")), 
-          React.createElement(LinkContainer, {to: { pathname: '/'}}, React.createElement(NavItem, {eventKey: "1"}, "NavItem 2 content")), 
+          React.createElement(LinkContainer, {to: { pathname: '/about'}}, React.createElement(NavItem, {eventKey: "0"}, "Home")), 
+          React.createElement(LinkContainer, {to: { pathname: '/home'}}, React.createElement(NavItem, {eventKey: "1"}, "About me")), 
           React.createElement(LinkContainer, {to: { pathname: '/llama'}}, React.createElement(NavItem, {eventKey: "2"}, "NavItem 3"))
         ), 
         React.createElement("div", {className: "content"}, 

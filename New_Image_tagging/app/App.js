@@ -17,10 +17,10 @@ var App = React.createClass({
   render: function(){
       return (
         <Router useKey={false} history={appHistory}>
-          <Route useKey={false} path="/" component={Mainapp}>
-            <IndexRoute useKey={false} component={Resume} />
-            <Route useKey={false} path="about" component={Resume} />
-            <Route useKey={false} path="llama" component={Main} />
+          <Route path="/" component={Mainapp}>
+            <IndexRoute component={Resume} />
+            <Route path="about" component={Resume} />
+            <Route path="llama" component={Main} />
           </Route>
         </Router>
       );
