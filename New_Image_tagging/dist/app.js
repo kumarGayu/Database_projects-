@@ -434,8 +434,8 @@ var ImageInput = React.createClass({displayName: "ImageInput",
     return (
       React.createElement("div", {className: "image-input"}, 
         React.createElement("input", {type: "file", disabled: true, ref: "img", name: "img"}), 
-        React.createElement("input", {type: "text", ref: "imageName"}), 
-        React.createElement("input", {type: "submit", value: "upload", onClick: this.onClick})
+        React.createElement("input", {type: "text", disabled: true, ref: "imageName"}), 
+        React.createElement("input", {type: "submit", disabled: true, value: "upload", onClick: this.onClick})
       )
     );
   }
