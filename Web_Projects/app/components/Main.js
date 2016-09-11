@@ -168,7 +168,6 @@ var Main = React.createClass({
           <Panel className="center">
             <Button lable = 'Show tags' onClick = {this.onShowTags}/>
             <Button lable = 'Hide tags' onClick = {this.onHideTags}/>
-            <Button lable = 'Remove all' onClick = {this.onRemoveTags}/>
           </Panel>
           <Panel className="drag-area center">
               <TagDialog hidden = {this.state.isTagDialogHidden}

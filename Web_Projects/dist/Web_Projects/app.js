@@ -716,8 +716,7 @@ var Main = React.createClass({displayName: "Main",
           ), 
           React.createElement(Panel, {className: "center"}, 
             React.createElement(Button, {lable: "Show tags", onClick: this.onShowTags}), 
-            React.createElement(Button, {lable: "Hide tags", onClick: this.onHideTags}), 
-            React.createElement(Button, {lable: "Remove all", onClick: this.onRemoveTags})
+            React.createElement(Button, {lable: "Hide tags", onClick: this.onHideTags})
           ), 
           React.createElement(Panel, {className: "drag-area center"}, 
               React.createElement(TagDialog, {hidden: this.state.isTagDialogHidden, 
