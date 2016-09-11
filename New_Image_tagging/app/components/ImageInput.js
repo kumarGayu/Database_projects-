@@ -21,7 +21,7 @@ var ImageInput = React.createClass({
   render: function(){
     return (
       <div className="image-input">
-        <input type="file" ref="img" name="img" />
+        <input type="file" disabled ref="img" name="img" />
         <input type="text" ref="imageName" />
         <input type="submit" value="upload" onClick={this.onClick} />
       </div>
