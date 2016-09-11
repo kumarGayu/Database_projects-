@@ -67,9 +67,9 @@ var Mainapp = React.createClass({displayName: "Mainapp",
        return (
       React.createElement("div", null, 
         React.createElement(Nav, {bsStyle: "tabs", activeKey: this.state.activeKey, onSelect: this.handleSelect}, 
-          React.createElement(LinkContainer, {to: { pathname: '/about'}}, React.createElement(NavItem, {eventKey: "0"}, "Home")), 
-          React.createElement(LinkContainer, {to: { pathname: '/home'}}, React.createElement(NavItem, {eventKey: "1"}, "About me")), 
-          React.createElement(LinkContainer, {to: { pathname: '/llama'}}, React.createElement(NavItem, {eventKey: "2"}, "NavItem 3"))
+          React.createElement(LinkContainer, {to: { pathname: '/Projects/about'}}, React.createElement(NavItem, {eventKey: "0"}, "Home")), 
+          React.createElement(LinkContainer, {to: { pathname: '/Projects/home'}}, React.createElement(NavItem, {eventKey: "1"}, "About me")), 
+          React.createElement(LinkContainer, {to: { pathname: '/Projects/llama'}}, React.createElement(NavItem, {eventKey: "2"}, "NavItem 3"))
         ), 
         React.createElement("div", {className: "content"}, 
           this.props.children
