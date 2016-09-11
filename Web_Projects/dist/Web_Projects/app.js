@@ -709,6 +709,12 @@ var Main = React.createClass({displayName: "Main",
       return (
         React.createElement(Panel, {className: "parent"}, 
           React.createElement(Panel, {className: "center"}, 
+            React.createElement("p", null, React.createElement("em", null, "This app is better understood by the medical experts "), "click on the medical images to select the cells for the labelling"), 
+            React.createElement("p", null, "Once you select the cells for a single labe right click"), 
+            React.createElement("p", null, "After your right click enter name for the label (red,orange,green)"), 
+            React.createElement("p", null, "Select type of the label(small,regular,Large)")
+          ), 
+          React.createElement(Panel, {className: "center"}, 
             React.createElement(Button, {lable: "Show tags", onClick: this.onShowTags}), 
             React.createElement(Button, {lable: "Hide tags", onClick: this.onHideTags}), 
             React.createElement(Button, {lable: "Remove all", onClick: this.onRemoveTags})
