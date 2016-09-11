@@ -24,7 +24,7 @@ var TagDialog = React.createClass({
 
     addTag: function(event){
         var e={
-            type: event.target.children[0].innerHTML.split(" ")[0],
+            type: event.target.innerText.split(" ")[0],
             tag: this.state.text
         };
 

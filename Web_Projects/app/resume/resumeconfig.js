@@ -3,7 +3,7 @@ var resumeconfig =
   "basics": {
     "name": "Kumar Jayaram Gayatri",
     "label": "Web Developer, Data Scientist (Researcher)",
-    "picture": "./Web_projects/image/profilePhoto.jpg",
+    "picture": "./Web_Projects/image/profilePhoto.jpg",
     "email": "kumar_gokarn@yahoo.co.in",
     "phone": "+1 6823670300",
     "website": "http://kumargayu.github.io/Projects/",
