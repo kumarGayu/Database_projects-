@@ -1,0 +1,18 @@
+var reasonconfig = {
+	react:{
+		name:"React Framework",
+		reasons:["Fast update","No DOM Manipulation","DOM updated with only changed DOM elements","Reusable Components","Modular development makes it a best fit for Unit testing","React provide its own framework to test each every reactive element"]
+	},
+	architect:{
+		name:"Architect",
+		description:"Entire Web page designed on the Configuration file except projects tab",
+		reasons:["Adaptable to any changes in the configuration","Contents are easy to manage for the Localization of languages","No lots of code manipulation"]
+	},
+	development:{
+		name:"Development",
+		reasons:["Easy to Develop","Gulp and browserify make it fast to develop a web page","Easy maintainance","All the required modules are available on the community and community support is too good"]
+	}
+
+}
+
+module.exports = reasonconfig
