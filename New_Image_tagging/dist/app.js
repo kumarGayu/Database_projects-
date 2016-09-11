@@ -18,7 +18,7 @@ var App = React.createClass({displayName: "App",
   render: function(){
       return (
         React.createElement(Router, {useKey: false, history: appHistory}, 
-          React.createElement(Route, {path: "/", component: Mainapp}, 
+          React.createElement(Route, {path: "/Projects", component: Mainapp}, 
             React.createElement(IndexRoute, {component: Resume}), 
             React.createElement(Route, {path: "about", component: Resume}), 
             React.createElement(Route, {path: "llama", component: Main})
