@@ -13,7 +13,7 @@ var Panel = React.createClass({
     		};
     	}
         return (
-            <div style={style} className={'panel '+ this.props.className}>
+            <div style={style} className={this.props.className}>
                 {this.props.children}
             </div>
           );

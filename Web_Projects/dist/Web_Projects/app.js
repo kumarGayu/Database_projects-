@@ -712,7 +712,7 @@ var Main = React.createClass({displayName: "Main",
             React.createElement("p", null, React.createElement("em", null, "This app is better understood by the medical experts "), "click on the medical images to select the cells for the labelling"), 
             React.createElement("p", null, "Once you select the cells for a single labe right click"), 
             React.createElement("p", null, "After your right click enter name for the label (red,orange,green)"), 
-            React.createElement("p", null, "Select type of the label(small,regular,Large)")
+            React.createElement("p", null, "Select type of the label(small,regular,large)")
           ), 
           React.createElement(Panel, {className: "center"}, 
             React.createElement(Button, {lable: "Show tags", onClick: this.onShowTags}), 
@@ -730,11 +730,6 @@ var Main = React.createClass({displayName: "Main",
           ), 
           React.createElement(Panel, {className: "center"}, 
             React.createElement(ImagePreview, {images: this.state.images, onImageClick: this.onImageClick, onNextClick: this.onNextClick, onPrevClick: this.onPrevClick})
-          ), 
-          React.createElement(Panel, {className: "center"}, 
-            React.createElement("span", null, React.createElement(Link, {to: "/home"}, "Repos"), 
-               this.props.children
-            )
           )
         )
       );
@@ -826,7 +821,7 @@ var Panel = React.createClass({displayName: "Panel",
     		};
     	}
         return (
-            React.createElement("div", {style: style, className: 'panel '+ this.props.className}, 
+            React.createElement("div", {style: style, className: this.props.className}, 
                 this.props.children
             )
           );

@@ -182,11 +182,6 @@ var Main = React.createClass({
           <Panel className="center">
             <ImagePreview images={this.state.images} onImageClick={this.onImageClick} onNextClick={this.onNextClick} onPrevClick={this.onPrevClick} />
           </Panel>
-          <Panel className="center">
-            <span><Link to="/home">Repos</Link>
-              { this.props.children }
-            </span>
-          </Panel>  
         </Panel>
       );
     }
