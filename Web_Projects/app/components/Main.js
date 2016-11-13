@@ -51,6 +51,7 @@ var Main = React.createClass({
 
     tagActions.addTag({
       type: tag.type,
+      tes:12,
       tag: tag.tag,
       imageId: this.state.image._id, 
       positions: this.state.positions
