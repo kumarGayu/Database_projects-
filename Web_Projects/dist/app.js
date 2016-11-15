@@ -22,7 +22,7 @@ var App = React.createClass({displayName: "App",
           React.createElement(Route, {path: "/Projects", component: Mainapp}, 
             React.createElement(IndexRoute, {component: Main}), 
             React.createElement(Route, {path: "deeplearning", component: Main}), 
-            React.createElement(Redirect, {from: "/Projects/deeplearning", to: "/Projects"})
+            React.createElement(Redirect, {from: "deeplearning", to: "/Projects"})
           )
         )
       );
