@@ -22,7 +22,7 @@ var App = React.createClass({displayName: "App",
           React.createElement(Route, {path: "/projects", component: Mainapp}, 
             React.createElement(IndexRoute, {component: Main}), 
             React.createElement(Route, {path: "deeplearning", component: Main}), 
-            React.createElement(Redirect, {from: "deeplearning", to: "projects"})
+            React.createElement(Redirect, {from: "/projects/deeplearning", to: "/projects"})
           )
         )
       );
@@ -67,8 +67,8 @@ var Mainapp = React.createClass({displayName: "Mainapp",
        return (
       React.createElement("div", null, 
         React.createElement(Nav, {bsStyle: "tabs", activeKey: this.state.activeKey, onSelect: this.handleSelect}, 
-          React.createElement(LinkContainer, {to: { pathname: 'projects/home'}}, React.createElement(NavItem, {eventKey: "0"}, "Home")), 
-          React.createElement(LinkContainer, {to: { pathname: 'projects/deeplearning'}}, React.createElement(NavItem, {eventKey: "3"}, "Deep Learning"))
+          React.createElement(LinkContainer, {to: { pathname: '/projects/home'}}, React.createElement(NavItem, {eventKey: "0"}, "Home")), 
+          React.createElement(LinkContainer, {to: { pathname: '/projects/deeplearning'}}, React.createElement(NavItem, {eventKey: "3"}, "Deep Learning"))
         ), 
         React.createElement("div", {className: "content"}, 
           this.props.children
