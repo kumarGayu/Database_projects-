@@ -67,8 +67,8 @@ var Mainapp = React.createClass({displayName: "Mainapp",
        return (
       React.createElement("div", null, 
         React.createElement(Nav, {bsStyle: "tabs", activeKey: this.state.activeKey, onSelect: this.handleSelect}, 
-          React.createElement(LinkContainer, {to: { pathname: '/projects/home'}}, React.createElement(NavItem, {eventKey: "0"}, "Home")), 
-          React.createElement(LinkContainer, {to: { pathname: '/projects/deeplearning'}}, React.createElement(NavItem, {eventKey: "3"}, "Deep Learning"))
+          React.createElement(LinkContainer, {to: { pathname: '/Projects/home'}}, React.createElement(NavItem, {eventKey: "0"}, "Home")), 
+          React.createElement(LinkContainer, {to: { pathname: '/Projects/deeplearning'}}, React.createElement(NavItem, {eventKey: "3"}, "Deep Learning"))
         ), 
         React.createElement("div", {className: "content"}, 
           this.props.children
