@@ -161,12 +161,6 @@ var Main = React.createClass({
       return (
         <Panel className="parent">
           <Panel className="center">
-            <p><em>This app is better understood by the medical experts </em>click on the medical images to select the cells for the labelling</p>
-            <p>Once you select the cells for a single labe right click</p>
-            <p>After your right click enter name for the label (red,orange,green)</p>
-            <p>Select type of the label(small,regular,large)</p>
-          </Panel>
-          <Panel className="center">
             <Button lable = 'Show tags' onClick = {this.onShowTags}/>
             <Button lable = 'Hide tags' onClick = {this.onHideTags}/>
           </Panel>

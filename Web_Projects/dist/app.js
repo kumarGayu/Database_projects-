@@ -4,7 +4,8 @@ var ReactDOM = require('react-dom');
 
 var Router = require('react-router').Router;
 var Route = require('react-router').Route;
-var IndexRoute = require('react-router').IndexRoute;
+var Redirect =  require('react-router').Redirect;
+var IndexRoute =  require('react-router').IndexRoute;
 
 var Mainapp = require('./Mainapp');
 var Main = require('./components/Main');
@@ -19,8 +20,9 @@ var App = React.createClass({displayName: "App",
       return (
         React.createElement(Router, {useKey: false, history: appHistory}, 
           React.createElement(Route, {path: "/", component: Mainapp}, 
-            React.createElement(IndexRoute, {component: Resume}), 
-            React.createElement(Route, {path: "projects", component: Main})
+            React.createElement(IndexRoute, {component: Main}), 
+            React.createElement(Route, {path: "deeplearning", component: Main}), 
+            React.createElement(Redirect, {from: "deeplearning", to: "/"})
           )
         )
       );
@@ -66,7 +68,7 @@ var Mainapp = React.createClass({displayName: "Mainapp",
       React.createElement("div", null, 
         React.createElement(Nav, {bsStyle: "tabs", activeKey: this.state.activeKey, onSelect: this.handleSelect}, 
           React.createElement(LinkContainer, {to: { pathname: '/home'}}, React.createElement(NavItem, {eventKey: "0"}, "Home")), 
-          React.createElement(LinkContainer, {to: { pathname: '/projects'}}, React.createElement(NavItem, {eventKey: "3"}, "Projects"))
+          React.createElement(LinkContainer, {to: { pathname: '/deeplearning'}}, React.createElement(NavItem, {eventKey: "3"}, "Deep Learning"))
         ), 
         React.createElement("div", {className: "content"}, 
           this.props.children
@@ -651,12 +653,6 @@ var Main = React.createClass({displayName: "Main",
     render: function(){
       return (
         React.createElement(Panel, {className: "parent"}, 
-          React.createElement(Panel, {className: "center"}, 
-            React.createElement("p", null, React.createElement("em", null, "This app is better understood by the medical experts "), "click on the medical images to select the cells for the labelling"), 
-            React.createElement("p", null, "Once you select the cells for a single labe right click"), 
-            React.createElement("p", null, "After your right click enter name for the label (red,orange,green)"), 
-            React.createElement("p", null, "Select type of the label(small,regular,large)")
-          ), 
           React.createElement(Panel, {className: "center"}, 
             React.createElement(Button, {lable: "Show tags", onClick: this.onShowTags}), 
             React.createElement(Button, {lable: "Hide tags", onClick: this.onHideTags})

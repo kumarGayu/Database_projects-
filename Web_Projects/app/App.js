@@ -3,7 +3,8 @@ var ReactDOM = require('react-dom');
 
 var Router = require('react-router').Router;
 var Route = require('react-router').Route;
-var IndexRoute = require('react-router').IndexRoute;
+var Redirect =  require('react-router').Redirect;
+var IndexRoute =  require('react-router').IndexRoute;
 
 var Mainapp = require('./Mainapp');
 var Main = require('./components/Main');
@@ -18,8 +19,9 @@ var App = React.createClass({
       return (
         <Router useKey={false} history={appHistory}>
           <Route path="/" component={Mainapp}>
-            <IndexRoute component={Resume} />
-            <Route path="projects" component={Main} />
+            <IndexRoute component={Main} />
+            <Route path="deeplearning" component={Main} />
+            <Redirect from="deeplearning" to="/" />
           </Route>
         </Router>
       );
